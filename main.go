@@ -59,7 +59,7 @@ func analyzeText(text string) (string, error) {
 
 	os.Setenv("OPENAI_API_KEY", apiKey)
 
-	llm, err := openai.New()
+	llm, err := openai.New(openai.WithModel("gpt-4"))
 	if err != nil {
 		return "", fmt.Errorf("failed to create OpenAI client: %w", err)
 	}
